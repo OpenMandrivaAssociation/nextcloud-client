@@ -1,0 +1,109 @@
+%define libname %mklibname nextcloudsync 2
+%define devname %mklibname -d nextcloudsync
+
+Summary:	Client for the NextCloud cloud storage system
+Name:		nextcloud-client
+Version:	2.5.3
+Release:	1
+License:	GPLv2+
+Group:		Graphical desktop/KDE
+Url:		http://github.com/nextcloud/desktop
+Source0:	https://github.com/nextcloud/desktop/archive/v%{version}.tar.gz
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(KF5CoreAddons)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5Keychain)
+BuildRequires:	cmake(DolphinVcs)
+BuildRequires:	pkgconfig(gio-2.0)
+BuildRequires:	pkgconfig(zlib)
+BuildRequires:	python >= 3.0
+BuildRequires:	texlive
+BuildRequires:	python-sphinx
+Requires:	%{libname} = %{EVRD}
+Recommends:	%{name}-dolphin = %{EVRD}
+
+%description
+Client for the NextCloud cloud storage system
+
+%package dolphin
+Summary:	NextCloud integration for the Dolphin file manager
+Group:		Graphical desktop/KDE
+Requires:	%{name} = %{EVRD}
+
+%description dolphin
+NextCloud integration for the Dolphin file manager
+
+%package nautilus
+Summary:	NextCloud integration for the Nautilus file manager
+Group:		Graphical desktop/KDE
+Requires:	%{name} = %{EVRD}
+
+%description nautilus
+NextCloud integration for the Nautilus file manager
+
+%package caja
+Summary:	NextCloud integration for the Caja file manager
+Group:		Graphical desktop/KDE
+Requires:	%{name} = %{EVRD}
+
+%description caja
+NextCloud integration for the Caja file manager
+
+%package -n %{libname}
+Summary:	Library for NextCloud synchronization
+Group:		System/Libraries
+
+%description -n %{libname}
+Library for NextCloud synchronization
+
+%package -n %{devname}
+Summary:	Development files for NextCloud synchronization
+Group:		System/Libraries
+Requires:	%{libname} = %{EVRD}
+
+%description -n %{devname}
+Development files for NextCloud synchronization
+
+%files -n %{libname}
+%{_libdir}/libnextcloudsync.so.*
+
+%files -n %{devname}
+%{_libdir}/libnextcloudsync.so
+%{_includedir}/nextcloudsync
+
+%files
+%{_libdir}/nextcloud
+%{_datadir}/nemo-python
+%{_datadir}/icons/*/*/*/*
+%{_datadir}/nextcloud
+%{_datadir}/applications/nextcloud.desktop
+%{_bindir}/nextcloud
+%{_bindir}/nextcloudcmd
+%{_sysconfdir}/Nextcloud
+
+%files dolphin
+%{_libdir}/libnextclouddolphinpluginhelper.so
+%{_libdir}/qt5/plugins/kf5/overlayicon/nextclouddolphinoverlayplugin.so
+%{_libdir}/qt5/plugins/nextclouddolphinactionplugin.so
+%{_datadir}/kservices5/nextclouddolphinactionplugin.desktop
+
+%files nautilus
+%{_datadir}/nautilus-python/extensions/*
+
+%files caja
+%{_datadir}/caja-python/extensions/*
+
+#--------------------------------------------------------------------
+
+%prep
+%autosetup -p1 -n desktop-%{version}
+%cmake_kde5
+
+%build
+%ninja -C build
+
+%install
+%ninja_install -C build
