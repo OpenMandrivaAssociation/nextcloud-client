@@ -32,6 +32,7 @@ Client for the NextCloud cloud storage system
 Summary:	NextCloud integration for the Dolphin file manager
 Group:		Graphical desktop/KDE
 Requires:	%{name} = %{EVRD}
+Enhances:	dolphin
 
 %description dolphin
 NextCloud integration for the Dolphin file manager
@@ -40,6 +41,7 @@ NextCloud integration for the Dolphin file manager
 Summary:	NextCloud integration for the Nautilus file manager
 Group:		Graphical desktop/KDE
 Requires:	%{name} = %{EVRD}
+Enhances:	nautilus
 
 %description nautilus
 NextCloud integration for the Nautilus file manager
@@ -48,6 +50,7 @@ NextCloud integration for the Nautilus file manager
 Summary:	NextCloud integration for the Caja file manager
 Group:		Graphical desktop/KDE
 Requires:	%{name} = %{EVRD}
+Enhances:	caja
 
 %description caja
 NextCloud integration for the Caja file manager
