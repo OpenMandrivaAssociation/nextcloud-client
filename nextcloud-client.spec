@@ -18,6 +18,7 @@ BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Keychain)
 BuildRequires:	cmake(DolphinVcs)
 BuildRequires:	pkgconfig(gio-2.0)
+BuildRequires:  pkgconfig(openssl)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	python >= 3.0
 BuildRequires:	texlive
