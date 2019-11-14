@@ -21,6 +21,10 @@ BuildRequires:  inotify-tools
 BuildRequires:  pkgconfig(cloudproviders)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(openssl)
+BuildRequires:  pkgconfig(Qt5Network)
+BuildRequires:  pkgconfig(Qt5Concurrent)
+BuildRequires:  pkgconfig(Qt5WebKitWidgets)
+BuildRequires:  pkgconfig(Qt5WebEngineWidgets)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	python >= 3.0
 BuildRequires:	texlive
