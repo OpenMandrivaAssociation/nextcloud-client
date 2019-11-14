@@ -20,7 +20,7 @@ BuildRequires:	cmake(DolphinVcs)
 BuildRequires:  doxygen
 BuildRequires:  inotify-tools
 BuildRequires:  inotifytools-devel
-BuildRequires:  pkgconfig(cloudproviders)
+#BuildRequires:  pkgconfig(cloudproviders)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(openssl)
 BuildRequires:  pkgconfig(sqlite3)
