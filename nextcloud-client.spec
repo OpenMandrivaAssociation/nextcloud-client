@@ -17,7 +17,18 @@ BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Keychain)
 BuildRequires:	cmake(DolphinVcs)
+BuildRequires:  doxygen
+BuildRequires:  inotify-tools
+BuildRequires:  inotifytools-devel
+#BuildRequires:  pkgconfig(cloudproviders)
 BuildRequires:	pkgconfig(gio-2.0)
+BuildRequires:  pkgconfig(openssl)
+BuildRequires:  pkgconfig(sqlite3)
+BuildRequires:  pkgconfig(Qt5Network)
+BuildRequires:  pkgconfig(Qt5Concurrent)
+BuildRequires:  pkgconfig(Qt5WebEngine)
+BuildRequires:  pkgconfig(Qt5WebKitWidgets)
+BuildRequires:  pkgconfig(Qt5WebEngineWidgets)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	python >= 3.0
 BuildRequires:	texlive
