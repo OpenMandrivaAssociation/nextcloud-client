@@ -17,6 +17,8 @@ BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Keychain)
 BuildRequires:	cmake(DolphinVcs)
+BuildRequires:  inotify-tools
+BuildRequires:  pkgconfig(cloudproviders)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(openssl)
 BuildRequires:	pkgconfig(zlib)
