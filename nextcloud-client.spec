@@ -4,7 +4,7 @@
 Summary:	Client for the NextCloud cloud storage system
 Name:		nextcloud-client
 Version:	2.6.2
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://github.com/nextcloud/desktop
@@ -115,6 +115,7 @@ Development files for NextCloud synchronization
 %prep
 %autosetup -p1 -n desktop-%{version}
 %cmake_kde5 \
+            -DCMAKE_SHARED_LINKER_FLAGS="-Wl,--as-needed" \
             -DCMAKE_INSTALL_PREFIX=%{_usr}
 
 %build
