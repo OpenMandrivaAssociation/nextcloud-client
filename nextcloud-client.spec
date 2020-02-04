@@ -1,3 +1,7 @@
+# %{_bindir}/nextcloud needs rpath to find its helper
+# libraries in %{_libdir}/nextcloud
+%global dont_remote_rpath 1
+
 %define libname %mklibname nextcloudsync 2
 %define devname %mklibname -d nextcloudsync
 
@@ -9,6 +13,7 @@ License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://github.com/nextcloud/desktop
 Source0:	https://github.com/nextcloud/desktop/archive/v%{version}/desktop-%{version}.tar.gz
+Patch0:		nextcloud-fix-rpath.patch
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5KIO)
@@ -114,7 +119,9 @@ Development files for NextCloud synchronization
 
 %prep
 %autosetup -p1 -n desktop-%{version}
-%cmake_kde5
+%cmake_kde5 \
+	-DCMAKE_SKIP_RPATH:BOOL=OFF \
+	-DCMAKE_SKIP_INSTALL_RPATH:BOOL=OFF
 
 %build
 export LD_LIBRARY_PATH=%{_libdir}/nextcloud
