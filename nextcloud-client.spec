@@ -7,7 +7,7 @@
 
 Summary:	Client for the NextCloud cloud storage system
 Name:		nextcloud-client
-Version:	2.6.5
+Version:	3.0.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -19,6 +19,8 @@ BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Gui)
+BuildRequires:  cmake(Qt5Svg)
+BuildRequires:  cmake(Qt5QuickControls2)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Keychain)
 BuildRequires:	cmake(DolphinVcs)
