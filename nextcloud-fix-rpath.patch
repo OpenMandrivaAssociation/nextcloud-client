@@ -1,6 +1,6 @@
-diff -uraN desktop-3.0.0/src/cmd/CMakeLists.txt omv-desktop-3.0.0/src/cmd/CMakeLists.txt
---- desktop-3.0.0/src/cmd/CMakeLists.txt	2020-08-11 15:13:02.000000000 +0200
-+++ omv-desktop-3.0.0/src/cmd/CMakeLists.txt	2020-08-19 16:17:54.975193549 +0200
+diff -uraN desktop-3.1.0/src/cmd/CMakeLists.txt omv-desktop-3.1.0/src/cmd/CMakeLists.txt
+--- desktop-3.1.0/src/cmd/CMakeLists.txt	2020-12-10 12:16:47.000000000 +0100
++++ omv-desktop-3.1.0/src/cmd/CMakeLists.txt	2020-12-14 21:19:17.655093104 +0100
 @@ -24,7 +24,7 @@
  	set_target_properties(${cmd_NAME} PROPERTIES
  	        RUNTIME_OUTPUT_DIRECTORY  ${BIN_OUTPUT_DIRECTORY} )
@@ -10,34 +10,34 @@ diff -uraN desktop-3.0.0/src/cmd/CMakeLists.txt omv-desktop-3.0.0/src/cmd/CMakeL
  
      target_link_libraries(${cmd_NAME} ocsync ${synclib_NAME} Qt5::Core Qt5::Network)
  
-diff -uraN desktop-3.0.0/src/crashreporter/CMakeLists.txt omv-desktop-3.0.0/src/crashreporter/CMakeLists.txt
---- desktop-3.0.0/src/crashreporter/CMakeLists.txt	2020-08-11 15:13:02.000000000 +0200
-+++ omv-desktop-3.0.0/src/crashreporter/CMakeLists.txt	2020-08-19 16:18:35.871806557 +0200
+diff -uraN desktop-3.1.0/src/crashreporter/CMakeLists.txt omv-desktop-3.1.0/src/crashreporter/CMakeLists.txt
+--- desktop-3.1.0/src/crashreporter/CMakeLists.txt	2020-12-10 12:16:47.000000000 +0100
++++ omv-desktop-3.1.0/src/crashreporter/CMakeLists.txt	2020-12-14 21:20:12.444865175 +0100
 @@ -29,7 +29,7 @@
      target_include_directories(${CRASHREPORTER_EXECUTABLE} PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
      set_target_properties(${CRASHREPORTER_EXECUTABLE} PROPERTIES AUTOMOC ON)
      set_target_properties(${CRASHREPORTER_EXECUTABLE} PROPERTIES RUNTIME_OUTPUT_DIRECTORY  ${BIN_OUTPUT_DIRECTORY} )
 -    set_target_properties(${CRASHREPORTER_EXECUTABLE} PROPERTIES INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${LIB_INSTALL_DIR}/${APPLICATION_EXECUTABLE}" )
-+   set_target_properties(${CRASHREPORTER_EXECUTABLE} PROPERTIES INSTALL_RPATH "${LIB_INSTALL_DIR}/${APPLICATION_EXECUTABLE}" )
++    set_target_properties(${CRASHREPORTER_EXECUTABLE} PROPERTIES INSTALL_RPATH "${LIB_INSTALL_DIR}/${APPLICATION_EXECUTABLE}" )
      target_link_libraries(${CRASHREPORTER_EXECUTABLE}
          crashreporter-gui
          Qt5::Core Qt5::Widgets
-diff -uraN desktop-3.0.0/src/gui/CMakeLists.txt omv-desktop-3.0.0/src/gui/CMakeLists.txt
---- desktop-3.0.0/src/gui/CMakeLists.txt	2020-08-11 15:13:02.000000000 +0200
-+++ omv-desktop-3.0.0/src/gui/CMakeLists.txt	2020-08-19 16:19:33.657942149 +0200
-@@ -312,7 +312,7 @@
+diff -uraN desktop-3.1.0/src/gui/CMakeLists.txt omv-desktop-3.1.0/src/gui/CMakeLists.txt
+--- desktop-3.1.0/src/gui/CMakeLists.txt	2020-12-10 12:16:47.000000000 +0100
++++ omv-desktop-3.1.0/src/gui/CMakeLists.txt	2020-12-14 21:21:07.575651814 +0100
+@@ -326,7 +326,7 @@
  )
  # Only relevant for Linux? On OS X it by default properly checks in the bundle directory next to the exe
  set_target_properties( ${APPLICATION_EXECUTABLE} PROPERTIES
 -        INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${LIB_INSTALL_DIR}/${APPLICATION_EXECUTABLE};${CMAKE_INSTALL_RPATH}" )
 +        INSTALL_RPATH "${LIB_INSTALL_DIR}/${APPLICATION_EXECUTABLE};${CMAKE_INSTALL_RPATH}" )
  
- target_link_libraries( ${APPLICATION_EXECUTABLE} Qt5::Widgets Qt5::Svg Qt5::Network Qt5::Xml Qt5::Qml Qt5::Quick Qt5::QuickControls2 Qt5::WebEngineWidgets)
+ target_link_libraries( ${APPLICATION_EXECUTABLE} Qt5::Widgets Qt5::GuiPrivate Qt5::Svg Qt5::Network Qt5::Xml Qt5::Qml Qt5::Quick Qt5::QuickControls2 Qt5::WebEngineWidgets)
  target_link_libraries( ${APPLICATION_EXECUTABLE} ${synclib_NAME} )
-diff -uraN desktop-3.0.0/src/libsync/CMakeLists.txt omv-desktop-3.0.0/src/libsync/CMakeLists.txt
---- desktop-3.0.0/src/libsync/CMakeLists.txt	2020-08-11 15:13:02.000000000 +0200
-+++ omv-desktop-3.0.0/src/libsync/CMakeLists.txt	2020-08-19 16:20:16.213306143 +0200
-@@ -132,7 +132,7 @@
+diff -uraN desktop-3.1.0/src/libsync/CMakeLists.txt omv-desktop-3.1.0/src/libsync/CMakeLists.txt
+--- desktop-3.1.0/src/libsync/CMakeLists.txt	2020-12-10 12:16:47.000000000 +0100
++++ omv-desktop-3.1.0/src/libsync/CMakeLists.txt	2020-12-14 21:21:54.295110274 +0100
+@@ -127,7 +127,7 @@
  	RUNTIME_OUTPUT_DIRECTORY ${BIN_OUTPUT_DIRECTORY}
  )
  set_target_properties( ${synclib_NAME} PROPERTIES
