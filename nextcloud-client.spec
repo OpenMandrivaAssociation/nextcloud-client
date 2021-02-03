@@ -124,6 +124,7 @@ Development files for NextCloud synchronization
 %autosetup -p1 -n desktop-%{version}
 %cmake_kde5 \
 	-DCMAKE_SKIP_RPATH:BOOL=OFF \
+	-DNO_SHIBBOLETH=True \
 	-DCMAKE_SKIP_INSTALL_RPATH:BOOL=OFF
 
 %build
