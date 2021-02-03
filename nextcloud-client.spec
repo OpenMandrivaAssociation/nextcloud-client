@@ -23,6 +23,7 @@ BuildRequires:  cmake(Qt5Svg)
 BuildRequires:  cmake(Qt5QuickControls2)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Keychain)
+BuildRequires:	cmake(Qt5WebSockets)
 BuildRequires:	cmake(DolphinVcs)
 BuildRequires:  doxygen
 BuildRequires:  inotify-tools
