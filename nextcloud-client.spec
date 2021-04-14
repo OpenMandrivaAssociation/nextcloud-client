@@ -13,7 +13,6 @@ License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://github.com/nextcloud/desktop
 Source0:	https://github.com/nextcloud/desktop/archive/v%{version}/desktop-%{version}.tar.gz
-#Patch0:		nextcloud-fix-rpath.patch
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5KIO)
