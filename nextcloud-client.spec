@@ -7,13 +7,12 @@
 
 Summary:	Client for the NextCloud cloud storage system
 Name:		nextcloud-client
-Version:	3.1.3
+Version:	3.2.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://github.com/nextcloud/desktop
 Source0:	https://github.com/nextcloud/desktop/archive/v%{version}/desktop-%{version}.tar.gz
-Patch0:		nextcloud-fix-rpath.patch
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5KIO)
@@ -22,6 +21,7 @@ BuildRequires:	cmake(Qt5Gui)
 BuildRequires:  cmake(Qt5Svg)
 BuildRequires:	cmake(Qt5Quick)
 BuildRequires:  cmake(Qt5QuickControls2)
+BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Keychain)
 BuildRequires:	cmake(Qt5WebSockets)
@@ -92,16 +92,19 @@ Development files for NextCloud synchronization
 
 %files -n %{libname}
 %{_libdir}/libnextcloudsync.so.*
+%{_libdir}/libnextcloud_csync.so.*
 
 %files -n %{devname}
 %{_libdir}/libnextcloudsync.so
+%{_libdir}/libnextcloud_csync.so
 %{_includedir}/nextcloudsync
 
 %files
-%{_libdir}/nextcloud
+#{_libdir}/nextcloud
 %{_datadir}/nemo-python
 %{_datadir}/icons/*/*/*/*
 %{_datadir}/nextcloud
+%{_datadir}/mime/packages/nextcloud.xml
 %{_datadir}/applications/com.nextcloud.desktopclient.nextcloud.desktop
 %{_bindir}/nextcloud
 %{_bindir}/nextcloudcmd
