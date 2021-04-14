@@ -99,7 +99,7 @@ Development files for NextCloud synchronization
 %{_includedir}/nextcloudsync
 
 %files
-%{_libdir}/nextcloud
+#{_libdir}/nextcloud
 %{_datadir}/nemo-python
 %{_datadir}/icons/*/*/*/*
 %{_datadir}/nextcloud
