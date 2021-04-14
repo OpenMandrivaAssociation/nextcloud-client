@@ -93,9 +93,11 @@ Development files for NextCloud synchronization
 
 %files -n %{libname}
 %{_libdir}/libnextcloudsync.so.*
+%{_libdir}/libnextcloud_csync.so.*
 
 %files -n %{devname}
 %{_libdir}/libnextcloudsync.so
+%{_libdir}/libnextcloud_csync.so
 %{_includedir}/nextcloudsync
 
 %files
