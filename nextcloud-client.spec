@@ -42,6 +42,7 @@ BuildRequires:	pkgconfig(zlib)
 BuildRequires:	python >= 3.0
 BuildRequires:	texlive
 BuildRequires:	python-sphinx
+BuildRequires:	inkscape
 Requires:	%{libname} = %{EVRD}
 Recommends:	%{name}-dolphin = %{EVRD}
 
