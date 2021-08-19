@@ -98,6 +98,8 @@ Development files for NextCloud synchronization
 %files -n %{devname}
 %{_libdir}/libnextcloudsync.so
 %{_libdir}/libnextcloud_csync.so
+%{_libdir}/nextcloudsync_vfs_suffix.so
+%{_libdir}/nextcloudsync_vfs_xattr.so
 %{_includedir}/nextcloudsync
 
 %files
