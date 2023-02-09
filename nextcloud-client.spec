@@ -116,8 +116,8 @@ Development files for NextCloud synchronization
 %files dolphin
 %{_libdir}/libnextclouddolphinpluginhelper.so
 %{_libdir}/qt5/plugins/kf5/overlayicon/nextclouddolphinoverlayplugin.so
-%{_libdir}/qt5/plugins/nextclouddolphinactionplugin.so
-%{_datadir}/kservices5/nextclouddolphinactionplugin.desktop
+#{_libdir}/qt5/plugins/nextclouddolphinactionplugin.so
+#{_datadir}/kservices5/nextclouddolphinactionplugin.desktop
 
 %files nautilus
 %{_datadir}/nautilus-python/extensions/*
