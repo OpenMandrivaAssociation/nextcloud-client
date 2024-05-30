@@ -8,7 +8,7 @@
 Summary:	Client for the NextCloud cloud storage system
 Name:		nextcloud-client
 Version:	3.12.5
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://github.com/nextcloud/desktop
