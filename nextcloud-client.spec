@@ -25,6 +25,7 @@ BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Keychain)
 BuildRequires:	cmake(Qt5WebSockets)
+BuildRequires:	cmake(Qt5QuickWidgets)
 BuildRequires:	cmake(DolphinVcs) < 23.05.90
 BuildRequires:  doxygen
 BuildRequires:  inotify-tools
