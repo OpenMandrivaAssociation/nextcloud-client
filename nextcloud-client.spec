@@ -37,8 +37,8 @@ BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:  pkgconfig(Qt6Network)
 BuildRequires:  pkgconfig(Qt6Concurrent)
 BuildRequires:  pkgconfig(Qt6WebEngine)
-BuildRequires:  pkgconfig(Qt6WebKitWidgets)
-BuildRequires:  pkgconfig(Qt6WebEngineWidgets)
+#BuildRequires:  pkgconfig(Qt6WebKitWidgets)
+#BuildRequires:  pkgconfig(Qt6WebEngineWidgets)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	python >= 3.0
 BuildRequires:	texlive
