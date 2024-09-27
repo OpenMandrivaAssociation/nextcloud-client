@@ -7,25 +7,25 @@
 
 Summary:	Client for the NextCloud cloud storage system
 Name:		nextcloud-client
-Version:	3.14.0
+Version:	3.14.1
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://github.com/nextcloud/desktop
 Source0:	https://github.com/nextcloud/desktop/archive/v%{version}/desktop-%{version}.tar.gz
 BuildRequires:	cmake(ECM)
-BuildRequires:	cmake(KF5CoreAddons)
-BuildRequires:	cmake(KF5KIO)
-BuildRequires:	cmake(Qt5Core)
-BuildRequires:	cmake(Qt5Gui)
-BuildRequires:  cmake(Qt5Svg)
-BuildRequires:	cmake(Qt5Quick)
-BuildRequires:  cmake(Qt5QuickControls2)
-BuildRequires:	cmake(Qt5Test)
-BuildRequires:	cmake(Qt5Widgets)
-BuildRequires:	cmake(Qt5Keychain)
-BuildRequires:	cmake(Qt5WebSockets)
-BuildRequires:	cmake(Qt5QuickWidgets)
+BuildRequires:	cmake(KF6CoreAddons)
+BuildRequires:	cmake(KF6KIO)
+BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6Gui)
+BuildRequires:  cmake(Qt6Svg)
+BuildRequires:	cmake(Qt6Quick)
+BuildRequires:  cmake(Qt6QuickControls2)
+BuildRequires:	cmake(Qt6Test)
+BuildRequires:	cmake(Qt6Widgets)
+BuildRequires:	cmake(Qt6Keychain)
+BuildRequires:	cmake(Qt6WebSockets)
+BuildRequires:	cmake(Qt6QuickWidgets)
 BuildRequires:	cmake(DolphinVcs) < 23.05.90
 BuildRequires:  doxygen
 BuildRequires:  inotify-tools
@@ -34,11 +34,11 @@ BuildRequires:  inotifytools-devel
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(openssl)
 BuildRequires:  pkgconfig(sqlite3)
-BuildRequires:  pkgconfig(Qt5Network)
-BuildRequires:  pkgconfig(Qt5Concurrent)
-BuildRequires:  pkgconfig(Qt5WebEngine)
-BuildRequires:  pkgconfig(Qt5WebKitWidgets)
-BuildRequires:  pkgconfig(Qt5WebEngineWidgets)
+BuildRequires:  pkgconfig(Qt6Network)
+BuildRequires:  pkgconfig(Qt6Concurrent)
+BuildRequires:  pkgconfig(Qt6WebEngine)
+BuildRequires:  pkgconfig(Qt6WebKitWidgets)
+BuildRequires:  pkgconfig(Qt6WebEngineWidgets)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	python >= 3.0
 BuildRequires:	texlive
