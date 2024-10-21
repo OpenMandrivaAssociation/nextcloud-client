@@ -138,7 +138,7 @@ Development files for NextCloud synchronization
 
 %build
 export LD_LIBRARY_PATH=%{_libdir}/nextcloud
-%ninja -C build
+%make_build
 
 %install
-%ninja_install -C build
+%make_install -C build
