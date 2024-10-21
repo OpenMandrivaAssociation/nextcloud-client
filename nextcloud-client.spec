@@ -37,9 +37,10 @@ BuildRequires:  pkgconfig(openssl)
 BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:  pkgconfig(Qt6Network)
 BuildRequires:  pkgconfig(Qt6Concurrent)
-BuildRequires:  pkgconfig(Qt6WebEngine)
-BuildRequires:  pkgconfig(Qt6WebKitWidgets)
-BuildRequires:  pkgconfig(Qt6WebEngineWidgets)
+BuildRequires:  pkgconfig(Qt6WebEngineCore)
+BuildRequires:	cmake(Qt6WebEngineWidgets)
+#BuildRequires:  pkgconfig(Qt6WebKitWidgets)
+#BuildRequires:  pkgconfig(Qt6WebEngineWidgets)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	python >= 3.0
 BuildRequires:	texlive
@@ -108,7 +109,7 @@ Development files for NextCloud synchronization
 #{_libdir}/nextcloud
 %{_datadir}/nemo-python
 %{_datadir}/icons/*/*/*/*
-%{_datadir}/nextcloud
+#{_datadir}/nextcloud
 %{_datadir}/mime/packages/nextcloud.xml
 %{_datadir}/applications/com.nextcloud.desktopclient.nextcloud.desktop
 %{_bindir}/nextcloud
