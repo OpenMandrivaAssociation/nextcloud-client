@@ -118,8 +118,8 @@ Development files for NextCloud synchronization
 
 %files dolphin
 %{_libdir}/libnextclouddolphinpluginhelper.so
-#{_libdir}/qt5/plugins/kf5/overlayicon/nextclouddolphinoverlayplugin.so
-#{_libdir}/qt5/plugins/kf5/kfileitemaction/nextclouddolphinactionplugin.so
+%{_libdir}/qt5/plugins/kf6/kfileitemaction/nextclouddolphinactionplugin.so
+%{_libdir}/qt5/plugins/kf6/overlayicon/nextclouddolphinoverlayplugin.so
 
 %files nautilus
 %{_datadir}/nautilus-python/extensions/*
@@ -131,7 +131,7 @@ Development files for NextCloud synchronization
 
 %prep
 %autosetup -p1 -n desktop-%{version}
-%cmake_kde5 \
+%cmake \
 	-DCMAKE_SKIP_RPATH:BOOL=OFF \
 	-DNO_SHIBBOLETH=True \
 	-DCMAKE_SKIP_INSTALL_RPATH:BOOL=OFF
