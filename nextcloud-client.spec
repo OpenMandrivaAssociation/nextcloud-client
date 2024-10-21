@@ -131,14 +131,14 @@ Development files for NextCloud synchronization
 
 %prep
 %autosetup -p1 -n desktop-%{version}
-%cmake \
+%cmake_kde5 \
 	-DCMAKE_SKIP_RPATH:BOOL=OFF \
 	-DNO_SHIBBOLETH=True \
 	-DCMAKE_SKIP_INSTALL_RPATH:BOOL=OFF
 
 %build
 export LD_LIBRARY_PATH=%{_libdir}/nextcloud
-%make_build
+%ninja -C build
 
 %install
-%make_install -C build
+%ninja_install -C build
