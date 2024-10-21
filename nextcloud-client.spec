@@ -7,7 +7,7 @@
 
 Summary:	Client for the NextCloud cloud storage system
 Name:		nextcloud-client
-Version:	3.14.1
+Version:	3.14.2
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -117,8 +117,8 @@ Development files for NextCloud synchronization
 
 %files dolphin
 %{_libdir}/libnextclouddolphinpluginhelper.so
-%{_libdir}/qt5/plugins/kf5/overlayicon/nextclouddolphinoverlayplugin.so
-%{_libdir}/qt5/plugins/kf5/kfileitemaction/nextclouddolphinactionplugin.so
+#{_libdir}/qt5/plugins/kf5/overlayicon/nextclouddolphinoverlayplugin.so
+#{_libdir}/qt5/plugins/kf5/kfileitemaction/nextclouddolphinactionplugin.so
 
 %files nautilus
 %{_datadir}/nautilus-python/extensions/*
