@@ -28,6 +28,7 @@ BuildRequires:	cmake(Qt6Keychain)
 BuildRequires:	cmake(Qt6WebSockets)
 BuildRequires:	cmake(Qt6QuickWidgets)
 BuildRequires:	cmake(Qt6Core5Compat)
+BuildRequires:	cmake(Qt6LinguistTools)
 BuildRequires:	cmake(DolphinVcs) > 23.06.0
 BuildRequires:  doxygen
 BuildRequires:  inotify-tools
