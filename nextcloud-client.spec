@@ -7,7 +7,7 @@
 
 Summary:	Client for the NextCloud cloud storage system
 Name:		nextcloud-client
-Version:	3.14.4
+Version:	3.15.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -27,7 +27,7 @@ BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Keychain)
 BuildRequires:	cmake(Qt6WebSockets)
 BuildRequires:	cmake(Qt6QuickWidgets)
-BuildRequires:	cmake(DolphinVcs) < 23.05.90
+BuildRequires:	cmake(DolphinVcs) > 23.06.0
 BuildRequires:  doxygen
 BuildRequires:  inotify-tools
 BuildRequires:  inotifytools-devel
@@ -105,21 +105,21 @@ Development files for NextCloud synchronization
 %{_libdir}/nextcloudsync_vfs_xattr.so
 %{_includedir}/nextcloudsync
 
-%files
-#{_libdir}/nextcloud
+%files -f %{name}.lang
 %{_datadir}/nemo-python
 %{_datadir}/icons/*/*/*/*
-#{_datadir}/nextcloud
 %{_datadir}/mime/packages/nextcloud.xml
 %{_datadir}/applications/com.nextcloud.desktopclient.nextcloud.desktop
 %{_bindir}/nextcloud
 %{_bindir}/nextcloudcmd
 %{_sysconfdir}/Nextcloud
+%dir %{_datadir}/nextcloud
+%dir %{_datadir}/nextcloud/i18n
 
 %files dolphin
 %{_libdir}/libnextclouddolphinpluginhelper.so
-%{_libdir}/qt5/plugins/kf6/kfileitemaction/nextclouddolphinactionplugin.so
-%{_libdir}/qt5/plugins/kf6/overlayicon/nextclouddolphinoverlayplugin.so
+%{_libdir}/qt6/plugins/kf6/kfileitemaction/nextclouddolphinactionplugin.so
+%{_libdir}/qt6/plugins/kf6/overlayicon/nextclouddolphinoverlayplugin.so
 
 %files nautilus
 %{_datadir}/nautilus-python/extensions/*
@@ -131,10 +131,11 @@ Development files for NextCloud synchronization
 
 %prep
 %autosetup -p1 -n desktop-%{version}
-%cmake_kde5 \
+%cmake \
 	-DCMAKE_SKIP_RPATH:BOOL=OFF \
 	-DNO_SHIBBOLETH=True \
-	-DCMAKE_SKIP_INSTALL_RPATH:BOOL=OFF
+	-DCMAKE_SKIP_INSTALL_RPATH:BOOL=OFF \
+	-G Ninja
 
 %build
 export LD_LIBRARY_PATH=%{_libdir}/nextcloud
@@ -142,3 +143,4 @@ export LD_LIBRARY_PATH=%{_libdir}/nextcloud
 
 %install
 %ninja_install -C build
+%find_lang %{name} --all-name --with-qt
