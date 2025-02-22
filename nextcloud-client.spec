@@ -44,8 +44,7 @@ BuildRequires:  pkgconfig(Qt6Network)
 BuildRequires:  pkgconfig(Qt6Concurrent)
 BuildRequires:  pkgconfig(Qt6WebEngineCore)
 BuildRequires:	cmake(Qt6WebEngineWidgets)
-#BuildRequires:  pkgconfig(Qt6WebKitWidgets)
-#BuildRequires:  pkgconfig(Qt6WebEngineWidgets)
+BuildRequires:	pkgconfig(xkbcommon-x11)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	python >= 3.0
 BuildRequires:	texlive
