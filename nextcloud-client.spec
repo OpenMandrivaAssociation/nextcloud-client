@@ -14,7 +14,7 @@ Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://github.com/nextcloud/desktop
-Source0:	https://github.com/nextcloud/desktop/archive/v%{oversion}-rc1/desktop-%{oversion}-rc1.tar.gz
+Source0:	https://github.com/nextcloud/desktop/archive/v%{oversion}-rc2/desktop-%{oversion}-rc2.tar.gz
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:	cmake(KF6KIO)
@@ -135,7 +135,7 @@ Development files for NextCloud synchronization
 #--------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n desktop-%{oversion}-rc1
+%autosetup -p1 -n desktop-%{oversion}-rc2
 %cmake \
 	-DCMAKE_SKIP_RPATH:BOOL=OFF \
 	-DNO_SHIBBOLETH=True \
