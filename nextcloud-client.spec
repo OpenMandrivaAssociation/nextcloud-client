@@ -5,16 +5,14 @@
 %define libname %mklibname nextcloudsync 2
 %define devname %mklibname -d nextcloudsync
 
-%define oversion 3.16.0
-
 Summary:	Client for the NextCloud cloud storage system
 Name:		nextcloud-client
-Version:	3.16.0
+Version:	3.16.1
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://github.com/nextcloud/desktop
-Source0:	https://github.com/nextcloud/desktop/archive/v%{oversion}/desktop-%{oversion}.tar.gz
+Source0:	https://github.com/nextcloud/desktop/archive/v%{version}/desktop-%{version}.tar.gz
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:	cmake(KF6KIO)
@@ -134,7 +132,7 @@ Development files for NextCloud synchronization
 #--------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n desktop-%{oversion}
+%autosetup -p1 -n desktop-%{version}
 %cmake \
 	-DCMAKE_SKIP_RPATH:BOOL=OFF \
 	-DNO_SHIBBOLETH=True \
