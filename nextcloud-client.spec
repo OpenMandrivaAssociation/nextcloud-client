@@ -13,6 +13,8 @@ License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://github.com/nextcloud/desktop
 Source0:	https://github.com/nextcloud/desktop/archive/v%{version}/desktop-%{version}.tar.gz
+Patch0:		https://patch-diff.githubusercontent.com/raw/nextcloud/desktop/pull/8766.patch
+
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:	cmake(KF6KIO)
