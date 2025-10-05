@@ -117,6 +117,7 @@ Development files for NextCloud synchronization
 %{_bindir}/nextcloud
 %{_bindir}/nextcloudcmd
 %{_sysconfdir}/Nextcloud
+%{_prefix}/lib/systemd/user/com.nextcloud.desktopclient.nextcloud.service
 %dir %{_datadir}/nextcloud
 %dir %{_datadir}/nextcloud/i18n
 
