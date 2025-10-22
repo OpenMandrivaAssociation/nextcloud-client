@@ -7,13 +7,12 @@
 
 Summary:	Client for the NextCloud cloud storage system
 Name:		nextcloud-client
-Version:	3.17.3
+Version:	4.0.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://github.com/nextcloud/desktop
 Source0:	https://github.com/nextcloud/desktop/archive/v%{version}/desktop-%{version}.tar.gz
-Patch0:		https://patch-diff.githubusercontent.com/raw/nextcloud/desktop/pull/8766.patch
 
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF6CoreAddons)
@@ -140,6 +139,7 @@ Development files for NextCloud synchronization
 	-DCMAKE_SKIP_RPATH:BOOL=OFF \
 	-DNO_SHIBBOLETH=True \
 	-DCMAKE_SKIP_INSTALL_RPATH:BOOL=OFF \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-G Ninja
 
 %build
