@@ -31,6 +31,7 @@ BuildRequires:	cmake(Qt6QuickWidgets)
 BuildRequires:	cmake(Qt6Core5Compat)
 BuildRequires:	cmake(Qt6LinguistTools)
 BuildRequires:	cmake(DolphinVcs) > 23.06.0
+BuildRequires:	cmake(KDSingleApplication-qt6)
 BuildRequires:  doxygen
 BuildRequires:  inotify-tools
 BuildRequires:  inotifytools-devel
