@@ -1,5 +1,4 @@
-# %{_bindir}/nextcloud needs rpath to find its helper
-# libraries in %{_libdir}/nextcloud
+# nextcloud needs rpath to find its helper libraries in libdir/nextcloud
 %global dont_remote_rpath 1
 
 %define libname %mklibname nextcloudsync
@@ -136,11 +135,13 @@ Development files for NextCloud synchronization
 
 %prep
 %autosetup -p1 -n desktop-%{version}
+# OpenSSL 4 dropped ENGINE; stubs make ENGINE_get_default_RSA() return NULL.
 %cmake \
 	-DCMAKE_SKIP_RPATH:BOOL=OFF \
 	-DNO_SHIBBOLETH=True \
 	-DCMAKE_SKIP_INSTALL_RPATH:BOOL=OFF \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
+	-DCMAKE_CXX_FLAGS="%{optflags} -DOPENSSL_ENGINE_STUBS" \
 	-G Ninja
 
 %build
