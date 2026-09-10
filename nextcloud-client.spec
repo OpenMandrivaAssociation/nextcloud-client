@@ -2,12 +2,12 @@
 # libraries in %{_libdir}/nextcloud
 %global dont_remote_rpath 1
 
-%define libname %mklibname nextcloudsync 2
-%define devname %mklibname -d nextcloudsync
+%define libname %mklibname nextcloudsync
+%define devname %mklibname nextcloudsync -d
 
 Summary:	Client for the NextCloud cloud storage system
 Name:		nextcloud-client
-Version:	33.0.7
+Version:	34.0.3
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -46,7 +46,7 @@ BuildRequires:  pkgconfig(Qt6WebEngineCore)
 BuildRequires:	cmake(Qt6WebEngineWidgets)
 BuildRequires:	pkgconfig(xkbcommon-x11)
 BuildRequires:	pkgconfig(zlib)
-BuildRequires:	python >= 3.0
+BuildRequires:	python
 BuildRequires:	texlive
 BuildRequires:	python-sphinx
 BuildRequires:	inkscape
