@@ -1,6 +1,7 @@
 # nextcloud needs rpath to find its helper libraries in libdir/nextcloud
 %global dont_remote_rpath 1
 
+%define oldlibname %mklibname nextcloudsync 2
 %define libname %mklibname nextcloudsync
 %define devname %mklibname nextcloudsync -d
 
@@ -51,6 +52,13 @@ BuildRequires:	python-sphinx
 BuildRequires:	inkscape
 Requires:	%{libname} = %{EVRD}
 Recommends:	%{name}-dolphin = %{EVRD}
+BuildSystem:	cmake
+BuildOption:	-DCMAKE_SKIP_RPATH:BOOL=OFF
+BuildOption:	-DNO_SHIBBOLETH=True
+BuildOption:	-DCMAKE_SKIP_INSTALL_RPATH:BOOL=OFF
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+# OpenSSL 4 dropped ENGINE; stubs make ENGINE_get_default_RSA() return NULL.
+BuildOption:	-DCMAKE_CXX_FLAGS="%{optflags} -DOPENSSL_ENGINE_STUBS"
 
 %description
 Client for the NextCloud cloud storage system
@@ -85,6 +93,7 @@ NextCloud integration for the Caja file manager
 %package -n %{libname}
 Summary:	Library for NextCloud synchronization
 Group:		System/Libraries
+%rename %{oldlibname}
 
 %description -n %{libname}
 Library for NextCloud synchronization
@@ -130,24 +139,3 @@ Development files for NextCloud synchronization
 
 %files caja
 %{_datadir}/caja-python/extensions/*
-
-#--------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n desktop-%{version}
-# OpenSSL 4 dropped ENGINE; stubs make ENGINE_get_default_RSA() return NULL.
-%cmake \
-	-DCMAKE_SKIP_RPATH:BOOL=OFF \
-	-DNO_SHIBBOLETH=True \
-	-DCMAKE_SKIP_INSTALL_RPATH:BOOL=OFF \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-DCMAKE_CXX_FLAGS="%{optflags} -DOPENSSL_ENGINE_STUBS" \
-	-G Ninja
-
-%build
-export LD_LIBRARY_PATH=%{_libdir}/nextcloud
-%ninja -C build
-
-%install
-%ninja_install -C build
-%find_lang %{name} --all-name --with-qt
