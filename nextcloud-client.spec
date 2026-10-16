@@ -7,7 +7,7 @@
 
 Summary:	Client for the NextCloud cloud storage system
 Name:		nextcloud-client
-Version:	34.0.5
+Version:	35.0.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -15,6 +15,7 @@ Url:		https://github.com/nextcloud/desktop
 Source0:	https://github.com/nextcloud/desktop/archive/v%{version}/desktop-%{version}.tar.gz
 
 BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(KF6Archive)
 BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:	cmake(KF6KIO)
 BuildRequires:	cmake(Qt6Core)
@@ -43,8 +44,7 @@ BuildRequires:  pkgconfig(openssl)
 BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:  pkgconfig(Qt6Network)
 BuildRequires:  pkgconfig(Qt6Concurrent)
-BuildRequires:  pkgconfig(Qt6WebEngineCore)
-BuildRequires:	cmake(Qt6WebEngineWidgets)
+# 35.0.0 dropped Qt WebEngine (signup uses the system browser).
 BuildRequires:	pkgconfig(xkbcommon-x11)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	python
