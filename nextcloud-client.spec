@@ -13,6 +13,8 @@ License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://github.com/nextcloud/desktop
 Source0:	https://github.com/nextcloud/desktop/archive/v%{version}/desktop-%{version}.tar.gz
+# QFileInfo is incomplete unless this translation unit includes it.
+Patch0:		nextcloud-qfileinfo.patch
 
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF6Archive)
